@@ -1,0 +1,7 @@
+const PI: f64 = 3.1415;
+const MAX_POINTS: u32 = 100_000;
+
+fn main() {
+    println!("PI = {}", PI);
+    println!("Max Points = {}", MAX_POINTS);
+}
