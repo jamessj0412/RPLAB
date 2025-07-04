@@ -1,0 +1,14 @@
+use std::io;
+
+fn main() {
+    let mut input = String::new();
+
+    println!("Enter a string literal:");
+    io::stdin().read_line(&mut input).unwrap();
+
+    let s_literal = input.trim();
+    let s_object = s_literal.to_string();
+
+    println!("String literal: {}", s_literal);
+    println!("String object: {}", s_object);
+}
