@@ -1,0 +1,11 @@
+fn main() {
+    let x = 5;
+    println!("Outside scope x = {}", x);
+
+    {
+        let x = x + 10; // shadowing
+        println!("Inside scope x = {}", x);
+    }
+
+    println!("Back outside scope x = {}", x);
+}
