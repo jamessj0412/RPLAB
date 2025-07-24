@@ -1,0 +1,18 @@
+use std::io;
+
+fn main() {
+    let mut input = String::new();
+    println!("Enter numbers separated by spaces:");
+
+    io::stdin().read_line(&mut input).unwrap();
+    let collection: Vec<i32> = input
+        .trim()
+        .split_whitespace()
+        .map(|x| x.parse().unwrap())
+        .collect();
+
+    println!("You entered:");
+    for value in collection.iter() {
+        println!("{}", value);
+    }
+}
