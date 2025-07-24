@@ -1,0 +1,21 @@
+use std::io;
+
+fn main() {
+    let mut input = String::new();
+
+    println!("Enter a number (or leave blank for None):");
+    io::stdin().read_line(&mut input).unwrap();
+    let trimmed = input.trim();
+
+    let value = if trimmed.is_empty() {
+        None
+    } else {
+        Some(trimmed.parse::<i32>().unwrap())
+    };
+
+    if let Some(x) = value {
+        println!("Matched value: {}", x);
+    } else {
+        println!("No value entered.");
+    }
+}
