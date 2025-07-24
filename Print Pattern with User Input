@@ -1,0 +1,12 @@
+use std::io;
+
+fn main() {
+    let mut input = String::new();
+    println!("Enter the number of rows for pattern:");
+    io::stdin().read_line(&mut input).unwrap();
+    let rows: usize = input.trim().parse().unwrap();
+
+    for i in 1..=rows {
+        println!("{}", "&".repeat(i));
+    }
+}
