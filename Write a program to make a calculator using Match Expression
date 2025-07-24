@@ -1,0 +1,39 @@
+use std::io;
+
+fn main() {
+    let mut input = String::new();
+
+    println!("Enter first number:");
+    io::stdin().read_line(&mut input).unwrap();
+    let a: i32 = input.trim().parse().unwrap();
+    input.clear();
+
+    println!("Enter second number:");
+    io::stdin().read_line(&mut input).unwrap();
+    let b: i32 = input.trim().parse().unwrap();
+    input.clear();
+
+    println!("Enter operator (+, -, *, /):");
+    io::stdin().read_line(&mut input).unwrap();
+    let operator = input.trim().chars().next().unwrap();
+
+    let result = match operator {
+        '+' => a + b,
+        '-' => a - b,
+        '*' => a * b,
+        '/' => {
+            if b != 0 {
+                a / b
+            } else {
+                println!("Error: Division by zero.");
+                return;
+            }
+        }
+        _ => {
+            println!("Invalid operator");
+            return;
+        }
+    };
+
+    println!("Result: {}", result);
+}
