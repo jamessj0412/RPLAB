@@ -1,0 +1,18 @@
+use std::io;
+
+fn main() {
+    let mut input = String::new();
+    println!("Enter the target value (greater than 1):");
+    io::stdin().read_line(&mut input).unwrap();
+    let target: i32 = input.trim().parse().unwrap();
+
+    let mut count = 0;
+    let mut value = 1;
+
+    while value < target {
+        value *= 2;
+        count += 1;
+    }
+
+    println!("Loop ran {} times, value reached {}", count, value);
+}
